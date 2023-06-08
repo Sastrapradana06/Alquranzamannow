@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Allura&family=Arvo:ital,wght@1,400;1,700&family=Comfortaa&family=DynaPuff&family=Inconsolata&family=Josefin+Sans:wght@300&family=Merriweather:wght@400;700&family=Montserrat&family=Mukta&family=Noto+Sans+JP:wght@400;500&family=Noto+Sans+NKo&family=Oswald&family=Poppins:wght@400;500&family=Righteous&family=Roboto+Mono:wght@100;500&family=Roboto:wght@100&family=Satisfy&family=Signika+Negative:wght@300;400&family=Ubuntu&display=swap');
+
+
+* {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none; 
+    -moz-tap-highlight-color: transparent; 
+    -moz-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none; 
+  }
+  
+  *:active {
+    outline: none;
+  }
+
+.font-all {
+    font-family: 'Poppins', sans-serif;
+}
+
+.font-judul {
+    font-family: 'Josefin Sans', sans-serif;
+
+}
+
+.bg-surah-dark {
+  /* backdrop-filter: blur(5px);
+  background-color: rgba(255, 255, 255, 0.2); */
+  background: linear-gradient(55deg, #212121 0%, #212121 40%, #323232 calc(40% + 1px), #323232 60%, #008F95 calc(60% + 1px), #008F95 70%, #14FFEC calc(70% + 1px), #08625a 100%);
+  border: 1px solid white;
+}
+
+.bg-surah-light {
+  /* backdrop-filter: blur(5px);
+  background-color: rgba(0, 0, 0, 0.4); */
+  background: linear-gradient(55deg, #212121 0%, #212121 40%, #323232 calc(40% + 1px), #323232 60%, #008F95 calc(60% + 1px), #008F95 70%, #14FFEC calc(70% + 1px), #14FFEC 100%);
+  border: 1px solid rgb(11, 11, 11);
+  color: white;
+}
+
+
+.light {
+    background-color: #e5ebe8;
+    color: rgb(0, 0, 0);
+    transition: all ease-in-out .3s;
+}
+
+.dark {
+    background-color: #212121;
+    color: rgb(247, 244, 244);
+    transition: all ease-in-out .3s;
+}
+
+.bg-list-dark {
+  background-color: white;
+  color: black;
+  /* margin-bottom: 10px; */
+}
+
+.bg-list-light {
+  background-color: rgb(17, 17, 17);
+  color: rgb(255, 255, 255);
+}
+
+
+  .cross:before, .cross:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: black;
+  }
+  
+  .cross:before {
+    transform: rotate(45deg);
+  }
+  
+  .cross:after {
+    transform: rotate(-45deg);
+  }
+  
+  .bar.cross {
+    position: relative;
+  }
+
