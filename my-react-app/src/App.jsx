@@ -14,6 +14,8 @@ function reducer(state, action) {
   switch(action.type) {
       case 'getSurah':
           return {...state, surah: action.payload}
+      case 'getDetailSurah':
+          return {...state, detailSurah: action.payload}
       case 'toggleTheme':
           return { ...state, theme: state.theme === 'light' ? 'dark' : 'light' };
       default:
@@ -23,6 +25,7 @@ function reducer(state, action) {
 
 const initialState = {
   surah : [],
+  detailSurah: [],
   theme : 'light'
 }
 

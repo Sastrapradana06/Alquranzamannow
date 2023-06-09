@@ -1,7 +1,10 @@
 export default function CariSurah() {
     return (
-        <div className="">
-            <p>Cari Surah</p>
+        <div className="card">
+        <div className="card-content">
+          <h3>hai</h3>
+          <p>ini card</p>
         </div>
+      </div>
     )
 }
