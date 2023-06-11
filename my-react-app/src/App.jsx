@@ -28,10 +28,10 @@ const initialState = {
   detailSurah: [],
   theme : 'light'
 }
+// console.log({state});
 
 function App() {
   const [state, dispatch] = useReducer(reducer, initialState)
-
   const surahContextValue = [state, dispatch]
 
   return (

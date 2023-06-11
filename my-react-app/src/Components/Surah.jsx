@@ -15,6 +15,11 @@ export default function Surah() {
             payload: result
           })
         });
+
+        dispatch({
+          type: 'getDetailSurah',
+          payload: []
+        })
       }, []);
 
       const getDetailSurah = (nomor) => {
@@ -28,10 +33,14 @@ export default function Surah() {
 
     return (
         <div className=" w-full">
-          <div className={`w-[95%] m-auto pt-[70px] flex flex-col gap-4 lg:flex-row lg:flex-wrap lg:pt-[90px] lg:w-[90%]`}>
+          <div className={`w-[95%] m-auto pb-6 pt-[70px] flex flex-col gap-4 lg:flex-row lg:flex-wrap lg:pt-[90px] lg:w-[90%]`}>
             {surah.length === 0 && (
-              <div className="spinner m-auto top-10">
-                <div className="inner">
+              <div className="h-[100vh] m-auto">
+                <div className="newtons-cradle m-auto top-10">
+                  <div className="newtons-cradle__dot"></div>
+                  <div className="newtons-cradle__dot"></div>
+                  <div className="newtons-cradle__dot"></div>
+                  <div className="newtons-cradle__dot"></div>
                 </div>
               </div>
             )}
