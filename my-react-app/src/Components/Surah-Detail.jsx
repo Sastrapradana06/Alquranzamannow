@@ -47,7 +47,7 @@ export default function SurahDetail() {
                     <div className=" w-full text-right">
                       <p className="text-[1.7rem] lg:text-[2.2rem]">{e.teksArab}</p>
                     </div>
-                    <div className="border-b latin">
+                    <div className="border-bottom-b latin">
                       <i className="text-[.7rem] lg:text-[1rem] text-left">{e.teksLatin}</i>
                     </div>
                     <div className="">

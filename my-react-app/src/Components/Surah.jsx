@@ -20,13 +20,14 @@ export default function Surah() {
           type: 'getDetailSurah',
           payload: []
         })
-      }, []);
+      }, [dispatch]);
 
       const getDetailSurah = (nomor) => {
         detailSurah(nomor).then((result) => {
           dispatch({
             type: 'getDetailSurah',
             payload: result
+
           })
         })
       }
@@ -48,7 +49,7 @@ export default function Surah() {
               return (
                 <div className={`card-surah ${state.theme === 'light' ? 'bg-surah-light' : 'bg-surah-dark'} w-[90%] h-max flex flex-col justify-between p-2 rounded-xl m-auto lg:w-[30%] relative overflow-hidden`} key={i}>
                     <div className="flex  text-[1.1rem] justify-between">
-                      <div className=" w-[80%] flex gap-1 items-center">
+                      <div className=" w-[80%] flex gap-1 items-center ">
                         <p className="text-center rounded-full">{ayat.nomor}.</p>
                         <p className="">{ayat.namaLatin}<span className="text-[.9rem] ml-1">({ayat.arti})</span></p>
                       </div>
