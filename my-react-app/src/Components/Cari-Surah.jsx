@@ -94,12 +94,12 @@ export default function CariSurah() {
     <div className={`card h-[100vh] relative ${seacrhSurah ? "h-max" : "h-[100vh]"}`}>
       <div className="card-content pt-16 p-2">
         <div className="mt-3 pb-4 w-[90%] m-auto">
-          <form onSubmit={getInputUser} className="flex gap-4 justify-center">
+          <form onSubmit={getInputUser} className="flex gap-2 justify-center">
             <input
               type="text"
               className={`bg-transparent rounded-md outline-none px-2 h-[30px] text-[.9rem] ${theme === "light" ? "border-b" : "border-w"}`}
               placeholder="Contoh(Al-Fatihah/Al-An'am)"
-              size={28}
+              size={15}
               onChange={(e) => setInputUser(e.target.value)}
               value={inputUser}
             />
