@@ -8,6 +8,7 @@ import Navbar from './Components/Navbar'
 import SurahDetail from './Components/Surah-Detail'
 import Home from './Components/Home';
 import CariSurah from './Components/Cari-Surah';
+import Footer from './Components/Footer';
 
 
 function reducer(state, action) {
@@ -46,6 +47,7 @@ function App() {
                     <Route path="/surah-detail" element={<SurahDetail />} />
                 </Routes>
         </div>
+        <Footer />
       </div>
     </surahContext.Provider>
   )

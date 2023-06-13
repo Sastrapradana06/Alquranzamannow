@@ -1,13 +1,48 @@
-// import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useSurahContext } from "../context/Constant";
+import { AiOutlineSearch } from "react-icons/ai";
 import AudioPlayer from "../utils/Audio";
 import Loading from "../utils/Loading";
 export default function SurahDetail() {
   const [state] = useSurahContext();
+  const [inputAyat, setInputAyat] = useState();
   const surah = state.detailSurah;
   const ayat = surah.ayat;
-  // console.log({surah});
 
+  const ayatRef = useRef([]);
+
+  useEffect(() => {
+    if (ayat) {
+      ayatRef.current = new Array(surah.jumlahAyat);
+    }
+  }, [ayat, surah])
+
+  function getAyat(e) {
+    e.preventDefault();
+
+    if (!surah) {
+      console.error("ga ada");
+      return;
+    }
+
+    const filteredAyat = ayat.filter((ayatObj) => {
+      return inputAyat == ayatObj.nomorAyat;
+    });
+
+    if (filteredAyat.length > 0) {
+      const targetAyat = filteredAyat[0];
+      
+      const selectedAyatRef = ayatRef.current[targetAyat.nomorAyat - 1];
+
+      if (selectedAyatRef) {
+        selectedAyatRef.scrollIntoView({ behavior: "smooth" });
+      }
+
+      return targetAyat;
+    }
+
+    setInputAyat("");
+  }
 
   return (
     <div className="h-max w-full relative">
@@ -33,13 +68,26 @@ export default function SurahDetail() {
                 <source src={surah.audioFull['05']} />
               </audio>
             </div>
+            <div className=" w-[80%] m-auto mt-5 flex justify-center">
+              <form onSubmit={getAyat} className="flex justify-center items-center gap-2">
+                <input 
+                  type="text"
+                  value={inputAyat}
+                  onChange={(e) => setInputAyat(e.target.value)}
+                  className={`outline-none bg-transparent border m-auto rounded-md text-[.9rem] px-3 py-1 ${state.theme === 'dark' ? 'border-w' : 'border-b'}`}
+                />
+                <button>
+                  <AiOutlineSearch size={25} />
+                </button>
+              </form>
+            </div>
           </div>
         )}
         <div className="flex flex-col gap-4">
           {ayat &&
             ayat.map((e, i) => {
               return (
-                <div className="border mt-10 w-[87%] h-max m-auto flex gap-2 flex-col justify-between p-2 lg:w-[80%] rounded-md card-ayat" key={i}>
+                <div className="border mt-10 w-[87%] h-max m-auto flex gap-2 flex-col justify-between p-2 lg:w-[80%] rounded-md card-ayat" key={i} ref={(ref) => (ayatRef.current[e.nomorAyat] = ref)}>
                   <div className=" ">
                     <p className="text-[1.1rem] lg:text-[1.4rem]">{e.nomorAyat}.</p>
                   </div>
